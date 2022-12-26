@@ -2,9 +2,7 @@ import { Tasks , dbConnection } from './model/taaskMoldel'
 
 const add = async (req , res )=>{
       dbConnection();
-      if (req.method === "OPTIONS") {
-        return res.status(200).send("ok")
-      }
+  
 try{
     if(req.method === 'POST'){
        

@@ -10,7 +10,7 @@ const tasks = new Schema(
   const Tasks = mongoose.models.tasks || mongoose.model('tasks', tasks);
 
 
-  const DB =  'mongodb://127.0.0.1:27017/testNextJS';
+  const DB =  'mongodb+srv://Ahmad:Ahmad@cluster0.yq3mcc1.mongodb.net/?retryWrites=true&w=majority';
   const dbConnection = ()=>{
     mongoose.connect(DB);
   } 
