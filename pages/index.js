@@ -12,7 +12,7 @@ export default function Home() {
   const [ text , setText ] = useState('')
 
   const x = ()=>{
-    axios.get('https://test-next-ruddy.vercel.app/api/addTask')
+    axios.get('/api/addTask')
     .then((res)=>{
       setAll(res.data.data);
       console.log(res.data.data);
@@ -26,7 +26,7 @@ export default function Home() {
   const add = (event)=>{
     const inputText = text; 
     if(inputText != ''){
-      axios.post('https://test-next-ruddy.vercel.app/api/addTask',{ taskText:inputText })
+      axios.post('/api/addTask',{ taskText:inputText })
       .then((res)=>{
         setText('')  
         x()
@@ -36,7 +36,7 @@ export default function Home() {
   }
   const Delete = (event)=>{
     
-    axios.delete(`https://test-next-ruddy.vercel.app/api/${event._id}`)
+    axios.delete(`/api/${event._id}`)
       .then(()=>{
         x()
       })
