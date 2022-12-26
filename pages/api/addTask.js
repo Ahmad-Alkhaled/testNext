@@ -5,8 +5,6 @@ const add = async (req , res )=>{
   
 try{
     if(req.method === 'POST'){
-       
-       
         const newTask = await new Tasks({
             taskText:req.body.taskText
         })
@@ -14,13 +12,10 @@ try{
         res.status(200).json({message:' new task added successfully :)'});
     }else if (req.method === 'GET')
     {
-       
         const AllTasks = await  Tasks.find()
         res.status(200).json({ success:true , data: AllTasks});
     }else if (req.method === 'DELETE')
     {
-      
-        console.log(req.params);
         const AllTasks = await  Tasks.deleteOne({ _id : req.body.id })
         res.status(200).json({ success:true , massage: `One task with-id: ${req.body.id}  deleted successfully` });
     }

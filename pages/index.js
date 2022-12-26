@@ -15,7 +15,7 @@ export default function Home() {
     axios.get('/api/addTask')
     .then((res)=>{
       setAll(res.data.data);
-      console.log(res.data.data);
+     
     })
   }
 
@@ -26,6 +26,7 @@ export default function Home() {
   const add = (event)=>{
     const inputText = text; 
     if(inputText != ''){
+      setAll([...All,{taskText:text}])
       axios.post('/api/addTask',{ taskText:inputText })
       .then((res)=>{
         setText('')  
