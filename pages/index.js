@@ -6,6 +6,9 @@ import axios from 'axios'
 import { useEffect , useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
+export const config = {
+  unstable_runtimeJS: false
+}
 
 export default function Home() {
   const [ All , setAll ] = useState([]);
@@ -15,7 +18,6 @@ export default function Home() {
     axios.get('/api/addTask')
     .then((res)=>{
       setAll(res.data.data);
-     
     })
   }
 
@@ -27,9 +29,9 @@ export default function Home() {
     const inputText = text; 
     if(inputText != ''){
       setAll([...All,{taskText:text}])
+      setText('')
       axios.post('/api/addTask',{ taskText:inputText })
-      .then((res)=>{
-        setText('')  
+      .then(()=>{
         x()
       })
     }
