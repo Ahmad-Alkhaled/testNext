@@ -6,9 +6,7 @@ import axios from 'axios'
 import { useEffect , useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
-export const config = {
-  unstable_runtimeJS: false
-}
+
 
 export default function Home() {
   const [ All , setAll ] = useState([]);
