@@ -1,0 +1,95 @@
+.main{
+    h1{
+        margin: 0;
+    }
+    background-color: rgb(64, 66, 69);
+    width:100%;
+    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+    .form{
+        width: 600px;
+        max-width: 600px;
+        height: 75px;
+        background-color: white;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+       
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+
+        input{
+            font-size: 20px;
+            width: 80%;
+            border: 0;
+            padding-left:10px ;
+            outline: none;
+            border-radius: 10px 0 0 10px;
+        }
+        button{
+            width: 20%;
+            font-size: 20px;
+            color: aliceblue;
+            font-weight: bold;
+            background-color: rgb(119, 200, 232);
+            border: 0;
+            border-radius: 0 10px 10px  0 ;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(115, 221, 147);
+            }
+        }
+    }
+    .container{
+        width: calc(600px - 20px) ;
+        max-width: 600px;
+        padding: 10px;
+        height: 580px;
+        background-color: aliceblue;
+        margin: 0 auto;
+        margin-top: 10px;
+        border-radius: 10px;
+        overflow-y: auto;
+        div{
+            width: calc( 100% - 20px ) ;
+            padding: 10px;
+            background-color: rgb(87, 146, 140);
+            border-radius: 5px;
+            margin-top: 10px;
+            word-wrap: break-word;
+            i{
+                float: right;
+                cursor: pointer;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 7px;
+          }
+          
+          /* Track */
+          &::-webkit-scrollbar-track {
+            background: #4e4e4e;
+          }
+          
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            background: rgba(238, 161, 37, 0.434);
+            border-radius:10px;
+          }
+          
+          /* Handle on hover */
+          &::-webkit-scrollbar-thumb:hover {
+            background: rgb(105, 177, 226);
+          }
+    }
+}
